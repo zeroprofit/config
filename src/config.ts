@@ -448,7 +448,7 @@ export class Config implements IConfig {
   protected dir(category: 'cache' | 'data' | 'config'): string {
     const base = process.env[`XDG_${category.toUpperCase()}_HOME`] ||
       (this.windows && process.env.LOCALAPPDATA) ||
-      path.join(this.home, category === 'data' ? '.local/share' : '.' + category)
+      path.join(this.home, category === 'data' ? '.share' : '.' + category)
     return path.join(base, this.dirname)
   }
 
